@@ -1,0 +1,62 @@
+<suite name=“suite name”>
+	<test name=“T1”>
+		<classes>
+			<class =“package1.class1/> …. 2 test methods, BM,AM, BC, AC
+			<class=“package1.class2/> ….. 3 test methods BC, AC, BT, AT
+		</classes>
+	</test>
+
+	<test name=“T2”>
+		<classes>
+			<class =“package2.class1”/>….  4 test methods, BC, AC, BS, AS
+			<class = “package2.class2/>….. 3 test methods, BM, AM, BT, AT
+		</classes>
+	</test>
+<suite>
+
+Flow Of Execution
+
+
+BS,C1,T2 ….. Before suite in Class 1 and Test tag 2
+
+	BT,C2,T1 ….. Before test in Class 2 and Test tag 1
+
+		BC,C1,T1 ….. Before Class in Class 1 and Test tag 1
+			BM,C1,T1 ….. Before Method in Class 1 and Test tag 1
+				M1,C1,T1 ….. Method 1 in Class 1 and Test tag 1
+			AM, C1,T1 ….. After Method in Class 1 and Test tag 1
+ 			BM,C1,T1 ….. Before Method in Class 1 and Test tag 1
+				M2,C1,T1 ….. Method 2 in Class 1 and Test tag 1
+			AM, C1,T1 ….. After Method in Class 1 and Test tag 1
+		AC,C1,T1 ….. After Class in Class 1 and Test tag 2
+
+		BC,C2,T1 ….. Before Class in Class 2 and Test tag 1
+			M1,C2,T1  ….. Method 1 in Class 2 and Test tag 1
+			M2,C2,T1  ….. Method 2 in Class 2 and Test tag 1
+			M3,C2,T1  ….. Method 3 in Class 2 and Test tag 1
+		AC,C2,T1….. After Class in Class 2 and Test tag 1
+
+	AT,C2,T1 ….. After test in Class 2 and Test tag 1
+
+	BT,C2,T2
+
+		BC,C1,T2
+			M1,C1,T2
+			M2,C1,T2
+			M3,C1,T2
+			M4,C1,T2
+		AC,C1,T2
+
+			BM,C2,T2
+				M1,C2,T2
+			AM,C2,T2
+			BM,C2,T2
+				M2,C2,T2
+			AM,C2,T2
+			BM,C2,T2
+				M3,C2,T2
+			AM,C2,T2
+
+	AT,C2,T2
+AS,C1,T2
+
